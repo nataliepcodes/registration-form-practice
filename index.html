@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <p>Please fill in this Registration form</p>
+    <form action="formprocessor.html" method="post">
+      <!--Use GET method for nonsensitive data, POST method for sensitive data, e.g. includes passwords-->
+      <!-- Persoanl data fieldset-->
+      <fieldset>
+        <legend>Personal Data</legend>
+        <label for="salutation">Salutation:</label>
+        <select name="salutation" id="salutation">
+          <option label="" value=""></option>
+          <option label="Mr." value="Mr."></option>
+          <option label="Mrs." value="Mrs." selected></option>
+          <!--selected makes a default choice, remove if not appropriate-->
+          <option label="Ms." value="Ms."></option>
+          <option label="Dr." value="Dr."></option>
+        </select>
+        <br />
+        <label for="fname">First Name:</label>
+        <input
+          id="fname"
+          type="text"
+          name="fname"
+          autofocus
+          placeholder="Anne"
+        />
+        <br />
+        <label for="fname">Middle Name:</label>
+        <input id="mname" type="text" name="mname" placeholder="Marie" />
+        <br />
+        <label for="lname">Last Name:</label>
+        <input id="lname" type="text" name="lname" placeholder="Smith" />
+        <br />
+        <label for="email">Email:</label>
+        <input
+          id="email"
+          type="text"
+          name="email"
+          placeholder="example@email.com"
+        />
+        <br />
+        <p>Your Smarts Membership Status</p>
+        <label class="memberoption">
+          <input type="radio" name="membership" value="none" /> Not a member
+        </label>
+        <label class="memberoption">
+          <input type="radio" name="membership" value="silver" /> Silver member
+        </label>
+        <label class="memberoption">
+          <input type="radio" name="membership" value="gold" /> Gold member
+        </label>
+        <br />
+        <a href="#">Read more about Smarts membership</a>
+      </fieldset>
+      <!-- Conference account fieldset-->
+      <fieldset>
+        <legend>Your Conference Account</legend>
+        <label for="login">Login name:</label>
+        <input id="login" type="text" name="login" />
+        <br />
+        <label for="password">Password:</label>
+        <input id="password" type="password" name="password" />
+        <br />
+        <label for="confirmpassword">Confirm password:</label>
+        <input id="confirmpassword" type="password" name="confirmpassword" />
+        <br />
+      </fieldset>
+      <!--Sessions fieldset-->
+      <fieldset>
+        <legend>Sessions</legend>
+
+        <p>What are the tracks you are interested in?</p>
+        <label>
+          <input type="checkbox" name="dev" checked /> Development
+        </label>
+        <!--checked is a default, used for example purposes, remove if not applicable-->
+        <label> <input type="checkbox" name="alm" /> ALM </label>
+        <label> <input type="checkbox" name="aspnet" /> ASP.NET </label>
+        <label> <input type="checkbox" name="csharp" /> C# </label>
+        <label> <input type="checkbox" name="vb" /> Visual Basic </label>
+        <label> <input type="checkbox" name="sql" /> SQL </label>
+        <p>What do you expect from these sessions?</p>
+        <textarea name="comments" id="comments" cols="50" rows="3"></textarea>
+      </fieldset>
+      <input type="submit" value="Register" />
+    </form>
+  </body>
+</html>
